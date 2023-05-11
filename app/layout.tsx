@@ -1,24 +1,26 @@
-import './globals.css'
-import Navbar from './components/Navbar'
-import MyProfilePic from './components/MyProfilePic'
+import { type Metadata } from 'next';
 
-export const metadata = {
-  title: "Dave's Blog",
-  description: 'Created by Dave Gray',
-}
+import './globals.css';
+import Navbar from './components/Navbar';
+
+export const metadata: Metadata = {
+  title: "Charly's Blog",
+  description: 'Created by Charly',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="dark:bg-slate-800">
+    <html lang='en'>
+      <body className='dark:bg-slate-800'>
         <Navbar />
-        <MyProfilePic />
-        {children}
+        <main className='px-4 md:py-6 prose prose-xl prose-slate dark:prose-invert mx-auto'>
+          {children}
+        </main>
       </body>
     </html>
-  )
+  );
 }
