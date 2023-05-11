@@ -32,7 +32,12 @@ export async function getPostByName(
     title: string;
     date: string;
     tags: string[];
-  }>({ source: rawMDX });
+  }>({
+    source: rawMDX,
+    options: {
+      parseFrontmatter: true,
+    },
+  });
 
   const id = fileName.replace(/\.mdx$/, '');
 
